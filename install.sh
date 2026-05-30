@@ -593,7 +593,8 @@ read -sp "Введите пароль FTP: " FTP_PASS
 echo
 
 # создаём пользователя без shell доступа
-useradd -m -d /var/www -s /usr/sbin/nologin $FTP_USER
+# useradd -m -d /var/www -s /usr/sbin/nologin $FTP_USER
+useradd -m -d /var/www -s /bin/bash $FTP_USER
 echo "$FTP_USER:$FTP_PASS" | chpasswd
 
 # даём права на сайты
