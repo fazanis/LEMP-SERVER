@@ -429,7 +429,7 @@ ln -sf $NGINX_CONF /etc/nginx/sites-enabled/${DOMAIN}
 echo "⏳ Проверка DNS..."
 ping -c1 ${DOMAIN} >/dev/null 2>&1 || echo "⚠ DNS может быть не настроен"
 
-link /etc/nginx/sites-available/${DOMAIN} /etc/nginx/sites-enabled/${DOMAIN}
+ln /etc/nginx/sites-available/${DOMAIN} /etc/nginx/sites-enabled/${DOMAIN}
 systemctl reload nginx
 
 fi
